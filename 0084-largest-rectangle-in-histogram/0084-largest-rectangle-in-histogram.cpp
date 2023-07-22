@@ -33,9 +33,9 @@ public:
         int ans=0;
         for(int i=0;i<n;i++)
         {
-            int x=(prvs[i]+1);
-            int y=nxts[i]-1;
-            ans=max(heights[i]*(y-x+1),ans);
+            int x=i-(prvs[i]+1);
+            int y=nxts[i]-1-i;
+            ans=max(heights[i]*(y+x+1),ans);
         }
         return ans;
         
