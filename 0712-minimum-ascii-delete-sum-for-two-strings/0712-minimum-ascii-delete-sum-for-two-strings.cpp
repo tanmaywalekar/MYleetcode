@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[1001][1001];
+    int dp[1003][1003];
     int rec(int i,int j,string &a, string &b)
     {
         if(i==a.size()&&j==b.size())
