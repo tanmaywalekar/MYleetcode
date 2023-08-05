@@ -14,14 +14,15 @@ public:
     map<int,vector<TreeNode*>> m;
      vector<TreeNode*> solve(int n)
      {
+          if(m.find(n)!=m.end())
+             return m[n];
         if(n==0)
             return {NULL};
          if(n==1)
          { TreeNode* z= new TreeNode(0);
              return{ z};
          }
-         if(m.find(n)!=m.end())
-             return m[n];
+        
           vector<TreeNode*> ans;
          for(int i=1;i<n;i+=2)
          {
