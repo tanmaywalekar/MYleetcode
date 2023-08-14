@@ -23,10 +23,14 @@ public:
     void rec(int left,int right,vector<int>& nums)
     { 
         
-        if(left>right)
+        if(left>right||ans!=-1e7)
             return;
         int i=findpos(left,right,nums);
+        if(ans!=-1e7)
+            return;
         rec(left,i-1,nums);
+        if(ans!=-1e7)
+            return;
         rec(i+1,right,nums);
     }
     int findKthLargest(vector<int>& nums, int k) {
