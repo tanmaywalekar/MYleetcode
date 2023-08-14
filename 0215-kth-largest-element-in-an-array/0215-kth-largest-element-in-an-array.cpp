@@ -28,16 +28,15 @@ public:
         int i=findpos(left,right,nums);
         if(ans!=-1e7)
             return;
+        if(p<i)
         rec(left,i-1,nums);
-        if(ans!=-1e7)
-            return;
+        else
         rec(i+1,right,nums);
     }
     int findKthLargest(vector<int>& nums, int k) {
          p=nums.size()-k;
         rec(0,nums.size()-1,nums);
-        // for(auto i:nums)
-        //     cout<<i<<" ";
+      
         return ans;
     }
 };
