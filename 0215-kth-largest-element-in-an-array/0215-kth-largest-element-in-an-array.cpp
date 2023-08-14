@@ -23,7 +23,7 @@ public:
     void rec(int left,int right,vector<int>& nums)
     { 
         
-        if(left>right||ans!=-1e7)
+        if(left>right)
             return;
         int i=findpos(left,right,nums);
         rec(left,i-1,nums);
