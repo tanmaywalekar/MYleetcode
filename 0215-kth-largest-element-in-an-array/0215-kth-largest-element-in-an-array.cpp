@@ -16,7 +16,7 @@ public:
                 swap(nums[i],nums[j]);
         }
         if(j==p)
-            ans=nums[left];
+        {  ans=nums[left];return j;}
         swap(nums[left],nums[j]);
         return j;
     }
