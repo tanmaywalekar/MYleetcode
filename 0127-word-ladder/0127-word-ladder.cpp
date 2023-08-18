@@ -1,7 +1,7 @@
 class Solution {
 public:
     int ladderLength(string a, string e, vector<string>& w) {
-        map<string,int>m;
+        unordered_map<string,int>m;
         for(auto i:w)
         {
             m[i]=0;
