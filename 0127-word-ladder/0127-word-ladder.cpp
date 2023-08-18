@@ -22,17 +22,18 @@ public:
                     return d+1;
                 q.pop();
                 for(int i=0;i<z.size();i++)
-                {  string x=z;
+                {  char x=z[i];
                     for(char c='a';c<='z';c++)
                     {
-                        x[i]=c;
-                        if(m.find(x)!=m.end()&&m[x]==0)
+                        z[i]=c;
+                        if(m.find(z)!=m.end()&&m[z]==0)
                         {
-                            m[x]=1;
-                            q.push(x);
+                            m[z]=1;
+                            q.push(z);
                         }
                         
                     }
+                 z[i]=x;
                 }
             }
             d++;
