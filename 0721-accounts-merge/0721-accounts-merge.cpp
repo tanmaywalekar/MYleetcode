@@ -30,11 +30,11 @@ void uni(int i,int j,vector<int>&v)
     }
 }
     vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
-        map<int,string> st;
-        map<string,int> in;
-        map<string,string>p;
+        unordered_map<int,string> st;
+        unordered_map<string,int> in;
+        unordered_map<string,string>p;
         int c=0;
-        for(auto v:accounts)
+        for(auto &v:accounts)
         {  
             
             for(int i=1;i<v.size();i++)
@@ -47,7 +47,7 @@ void uni(int i,int j,vector<int>&v)
             }
         }
         vector<int> g(c,-1);
-        for(auto v:accounts)
+        for(auto &v:accounts)
         {
             for(int i=2;i<v.size();i++)
             {
@@ -57,7 +57,7 @@ void uni(int i,int j,vector<int>&v)
         
         
         vector<vector<string>> ans;
-        map<int,vector<string>> m;
+        unordered_map<int,vector<string>> m;
         for(int i=0;i<g.size();i++)
         {
             int x=find(i,g);
