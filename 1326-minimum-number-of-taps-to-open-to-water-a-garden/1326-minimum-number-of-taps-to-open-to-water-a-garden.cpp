@@ -1,9 +1,10 @@
 class Solution {
 public:
-    map<pair<int,int>,int>m;
+   map<pair<int,int>,int>m;
     int rec(int i,int e, vector<pair<int,int>>&v)
     {  
-        
+        if(m.find({i,e})!=m.end())
+            return m[{i,e}];
         if(i==v.size())
         {  
             
@@ -14,8 +15,7 @@ public:
             else
                 return m[{i,e}]=1e7;
         }
-        if(m.find({i,e})!=m.end())
-            return m[{i,e}];
+        
         if(e==-1)
         {
             if(v[i].first>0)
