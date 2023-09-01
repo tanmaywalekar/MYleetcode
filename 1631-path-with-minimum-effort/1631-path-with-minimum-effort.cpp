@@ -28,9 +28,29 @@ public:
     }
 
     int minimumEffortPath(vector<vector<int>>& heights) {
+         vector<vector<int>> v(heights.size(),vector<int>(heights[0].size(),0));
+        queue<pair<int,int>>q;
+        v[0][0]=1;
+        q.push({0,0});
+        int h=0;
+        while(q.size())
+        {
+            int i=q.front().first;
+            int j=q.front().second;
+            q.pop();
+            for(int k=0;k<4;k++)
+            {
+                if(i+d[k]>=0&&i+d[k]<heights.size()&&j+d[k+1]>=0&&j+d[k+1]<heights[0].size()&&v[i+d[k]][j+d[k+1]]==0)
+                {
+                    v[i+d[k]][j+d[k+1]]=1;
+                    q.push({i+d[k],j+d[k+1]});
+                    h=max(h,abs(heights[i][j]-heights[i+d[k]][j+d[k+1]]));
+                }
+            }
+        }
         
         int l=0;
-        int h=1e6;
+       
         int ans=h;
         while(l<=h)
         {
