@@ -33,6 +33,7 @@ public:
         v[0][0]=1;
         q.push({0,0});
         int h=0;
+         int l=INT_MAX;
         while(q.size())
         {
             int i=q.front().first;
@@ -45,11 +46,12 @@ public:
                     v[i+d[k]][j+d[k+1]]=1;
                     q.push({i+d[k],j+d[k+1]});
                     h=max(h,abs(heights[i][j]-heights[i+d[k]][j+d[k+1]]));
+                     l=min(l,abs(heights[i][j]-heights[i+d[k]][j+d[k+1]]));
                 }
             }
         }
         
-        int l=0;
+       
        
         int ans=h;
         while(l<=h)
