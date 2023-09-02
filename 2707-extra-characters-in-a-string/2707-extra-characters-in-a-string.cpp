@@ -13,7 +13,17 @@ public:
         int ans=z.length();
         for(int k=i;k<j;k++)
         {
-            int b=rec(i,k,z)+rec(k+1,j,z);
+            int b=0;
+            if(dp[i][k]!=-1)
+                b+=dp[i][k];
+            else
+                b+=rec(i,k,z);
+            
+             if(dp[k+1][j]!=-1)
+                b+=dp[k+1][j];
+            else
+                b+=rec(k+1,j,z);
+              
             ans=min(ans,b);
             
         }
