@@ -4,12 +4,13 @@ public:
     int dp[51][51];
     int rec(int i,int j,string &z)
     {
+        if(dp[i][j]!=-1)
+            return dp[i][j];
         if(s.find(z.substr(i,j-i+1))!=s.end())
             return 0;
         if(i==j)
             return 1;
-        if(dp[i][j]!=-1)
-            return dp[i][j];
+        
         int ans=z.length();
         for(int k=i;k<j;k++)
         {
