@@ -1,10 +1,21 @@
 class Solution {
 public:
+    static int popcount(int x)
+    {
+        int c=0;
+        while(x)
+        {
+            if(x%2==1)
+                c++;
+            x=x/2;
+        }
+        return c;
+    }
    static bool cmp(const int a,const int b)
     {
-        if(__builtin_popcount(a)<__builtin_popcount(b))
+        if(popcount(a)<popcount(b))
             return true;
-       else if(__builtin_popcount(a)==__builtin_popcount(b))
+       else if(popcount(a)==popcount(b))
            return a<b;
         return false;
     }
